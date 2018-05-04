@@ -1,0 +1,31 @@
+{
+  "name": "art-viewer-second-try",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/anthony-gordon/art-viewer-second-try.git",
+  "author": "<you@example.com>",
+  "license": "MIT",
+  "scripts": {
+    "knex": "knex",
+    "test": "jest",
+    "dev": "nodemon --watch server & webpack --watch"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "enzyme": "^3.3.0",
+    "express": "^4.16.3",
+    "jest": "^22.4.3",
+    "knex": "^0.14.6",
+    "nodemon": "^1.17.3",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-redux": "^5.0.7",
+    "redux-thunk": "^2.2.0",
+    "sqlite3": "^4.0.0",
+    "superagent": "^3.8.3",
+    "webpack": "^4.7.0"
+  }
+}
