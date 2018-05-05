@@ -1,8 +1,7 @@
 import request from 'superagent'
 
 export const REQUEST_BACKGROUNDS = 'REQUEST_BACKGROUNDS'
-export const RECIEVE_BACKGROUNDS = 'RECEIVE_BACKGROUNDS'
-
+export const RECEIVE_BACKGROUNDS = 'RECEIVE_BACKGROUNDS'
 
 
 export const requestBackgrounds = () => {
@@ -12,6 +11,7 @@ export const requestBackgrounds = () => {
 }
 
 export const receiveBackgrounds = (backgrounds) => {
+    console.log("receive", backgrounds)
     return {
         type: RECEIVE_BACKGROUNDS,
         backgrounds
@@ -27,7 +27,7 @@ export function fetchBackgrounds () {
             dispatch(receiveBackgrounds(res.body))
         })
         .catch(err => {
-            console.log(err.message)
+            console.error(err.message)
         })
     })
 }

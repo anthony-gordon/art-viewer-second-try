@@ -2,5 +2,5 @@ import {combineReducers} from 'redux'
 import backgroundsReducer from './backgroundsReducer'
 
 export default combineReducers({
-    backgroundsReducer
+    backgrounds:backgroundsReducer
 })

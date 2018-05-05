@@ -1,12 +1,12 @@
-import {RECIEVE_BACKGROUNDS} from '../actions'
+import {RECEIVE_BACKGROUNDS} from '../actions'
 
-const backgroundReducer = (state =true, action) => {
+const backgroundsReducer = (state =true, action) => {
     switch (action.type) {
-        case RECIEVE_BACKGROUNDS:
-        return action.animals
+        case RECEIVE_BACKGROUNDS:
+            return action.backgrounds
         default:
-        return state
+            return state
     }
 }
 
-export default backgroundReducer
+export default backgroundsReducer
