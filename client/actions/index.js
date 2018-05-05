@@ -1,17 +1,26 @@
 import request from 'superagent'
 
-export const REQUEST_BACKGROUNDS = 'REQUEST_BACKGROUNDS'
 export const RECEIVE_BACKGROUNDS = 'RECEIVE_BACKGROUNDS'
+export const INCREASE_INDEX = 'INCREASE_INDEX'
+export const DECREASE_INDEX = 'DECREASE_INDEX'
 
-
-export const requestBackgrounds = () => {
+export function increaseTheIndex (index, backgrounds){
     return {
-        type: REQUEST_BACKGROUNDS
+        type: INCREASE_INDEX,
+        index,
+        backgrounds
+    }
+}
+
+export function decreaseTheIndex (index, backgrounds){
+    return {
+        type: DECREASE_INDEX,
+        index,
+        backgrounds
     }
 }
 
 export const receiveBackgrounds = (backgrounds) => {
-    console.log("receive", backgrounds)
     return {
         type: RECEIVE_BACKGROUNDS,
         backgrounds
@@ -20,7 +29,6 @@ export const receiveBackgrounds = (backgrounds) => {
 
 export function fetchBackgrounds () {
     return (dispatch => {
-        dispatch(requestBackgrounds())
         return request
         .get('/api/v1')
         .then(res => {

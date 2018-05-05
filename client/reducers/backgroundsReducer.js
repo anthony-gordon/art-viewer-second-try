@@ -9,4 +9,5 @@ const backgroundsReducer = (state =true, action) => {
     }
 }
 
+
 export default backgroundsReducer
