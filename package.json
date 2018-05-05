@@ -1,7 +1,7 @@
 {
   "name": "art-viewer-second-try",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server",
   "repository": "https://github.com/anthony-gordon/art-viewer-second-try.git",
   "author": "<you@example.com>",
   "license": "MIT",
