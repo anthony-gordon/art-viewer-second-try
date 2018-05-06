@@ -3,6 +3,8 @@ import {connect} from 'react-redux'
 import {postUrlRequest} from '../actions/index'
 import {fetchBackgrounds} from '../actions'
 import {fetchArtworks, postArtworkRequest} from '../actions/artworks'
+// import {HashRouter as Router, Route, Link} from 'react-router-dom'
+
 
 class LeftColumns extends React.Component {
     constructor(props) {
@@ -59,6 +61,14 @@ updateArtwork(e){
             
                 <input id="submitUpload" className="button is-link is-focused" type='submit' />    
             </form>
+        </div>
+        <div id="uploadingimagebox" className="box">
+            <h6 className="subtitle is-6">View all artwork images</h6>
+            {/* <Link to="/artworks" >
+                <a className="button is-link is-focused" id="backbutton"
+                //  onClick={this.makeBackgroundInvisible.bind(this)}
+                 >Back</a>
+            </Link> */}
         </div>
     </div>
         )
