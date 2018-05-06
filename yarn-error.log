@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js dev
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js knex seed:run
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -42,6 +42,7 @@ npm manifest:
       "babel-preset-env": "^1.6.1",
       "babel-preset-react": "^6.24.1",
       "babel-register": "^6.26.0",
+      "bulma-start": "^0.0.2",
       "enzyme": "^3.3.0",
       "express": "^4.16.3",
       "jest": "^22.4.3",
@@ -1308,6 +1309,10 @@ Lockfile:
   builtin-status-codes@^3.0.0:
     version "3.0.0"
     resolved "https://registry.yarnpkg.com/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
+  
+  bulma-start@^0.0.2:
+    version "0.0.2"
+    resolved "https://registry.yarnpkg.com/bulma-start/-/bulma-start-0.0.2.tgz#472507881b1b27af29e009c8599503e1462d2031"
   
   bytes@3.0.0:
     version "3.0.0"
@@ -7097,7 +7102,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c nodemon --watch server & webpack --watch
+  Arguments: -c knex seed:run
   Directory: /Users/anthonylebrun/workspace/art-viewer-second-try
   Output:
   

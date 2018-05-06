@@ -3,6 +3,8 @@ import request from 'superagent'
 export const RECEIVE_ARTWORKS = 'RECEIVE_ARTWORKS'
 export const INCREASE_ARTWORK_INDEX = 'INCREASE_ARTWORK_INDEX'
 export const DECREASE_ARTWORK_INDEX = 'DECREASE_ARTWORK_INDEX'
+export const ADD_ARTWORK = 'ADD_ARTWORK'
+
 
 export function increaseTheArtworkIndex (artworkIndex, artworks){
     return {
@@ -27,6 +29,14 @@ export const receiveArtworks = (artworks) => {
     }
 }
 
+
+export const addArtwork = (artwork) => {
+    return {
+        type:'ADD_ARTWORK',
+        artwork
+    }
+}
+
 export function fetchArtworks () {
     return (dispatch => {
         return request
@@ -38,4 +48,19 @@ export function fetchArtworks () {
             console.error(err.message)
         })
     })
+}
+
+export function postArtworkRequest (artwork) {
+    return dispatch => {
+        request
+            .post('/api/v2')
+            .send(artwork)
+            .end((err, res) => {
+                if (err){
+                    console.log(err.message)
+                    return
+                }
+                dispatch(addArtwork(res.body))
+            })
+    }
 }

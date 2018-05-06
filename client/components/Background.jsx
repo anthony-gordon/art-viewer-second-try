@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {fetchBackgrounds} from '../actions'
 import Artwork from './Artwork'
 import RightColumns from './RightColumns'
+import LeftColumns from './LeftColumns'
 
 class Background extends React.Component {
 
@@ -16,13 +17,16 @@ componentDidMount(){
         {oneBackground =   oneBackground || ""}
         return (
             <div className="columns">
-                <div className="column is-9" id="maincontent">
+                <div className="column is-2 " id="leftcolumn">
+                    <LeftColumns />
+                </div> 
+                <div className="column is-8" id="maincontent">
                     <img src={oneBackground.url} />
                     <div className="artworkcontainer">
                         < Artwork />
                         </div>
                 </div>
-                <div className="column is-3 " id="rightcolumn">
+                <div className="column is-2 " id="rightcolumn">
                     <RightColumns />
                 </div>        
             </div>

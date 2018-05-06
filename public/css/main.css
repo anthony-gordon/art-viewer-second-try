@@ -1,11 +1,16 @@
 img {
-    width: 98%;
-    margin-left: 1%;
+    width: 97%;
 }
 
 .button.is-link.is-focused{
     width: 48.5%;
 }
+
+#submitUpload {
+    width: 100%;
+    margin-top: 12px;
+}
+
 
 #rightcolumn {
     padding-left: 0;
@@ -37,4 +42,8 @@ img {
     top: 30%;
     left: 50%;
     width: 100px;
+}
+
+#uploadingimagebox {
+    margin-left: 12px;
 }
