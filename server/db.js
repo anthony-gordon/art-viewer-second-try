@@ -8,6 +8,12 @@ function getBackgrounds (testConn) {
   return conn('backgrounds').select()
 }
 
+function getArtworks(testConn) {
+    const conn = testConn || connection
+    return conn('artworks').select()
+  }
+
   module.exports = {
-        getBackgrounds
+        getBackgrounds,
+        getArtworks
   }

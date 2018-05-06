@@ -13,8 +13,28 @@ img {
 
 #maincontent {
     padding-right: 0;
+    position: relative;
 }
 
 #backbutton {
     margin-right: 1%;
+}
+
+.columns {
+    margin-right: 0px;
+}
+
+.box {
+    text-align: center;
+}
+
+.subtitle.is-6 {
+    margin-bottom: 12px;
+}
+
+.artworkcontainer{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 100px;
 }

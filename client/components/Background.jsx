@@ -1,6 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {fetchBackgrounds, increaseTheIndex, decreaseTheIndex} from '../actions'
+import {fetchBackgrounds} from '../actions'
+import Artwork from './Artwork'
+import RightColumns from './RightColumns'
 
 class Background extends React.Component {
 
@@ -8,26 +10,20 @@ componentDidMount(){
     this.props.dispatch(fetchBackgrounds())
 }
 
-increaseIndex(){
-    this.props.dispatch(increaseTheIndex(this.props.index, this.props.backgrounds))
-}
-
-decreaseIndex(){
-    this.props.dispatch(decreaseTheIndex(this.props.index, this.props.backgrounds))
-}
-
     render(){
-        console.log(this.props.backgrounds)
+
         {var oneBackground = this.props.backgrounds[this.props.index]}
         {oneBackground =   oneBackground || ""}
         return (
             <div className="columns">
                 <div className="column is-9" id="maincontent">
                     <img src={oneBackground.url} />
+                    <div className="artworkcontainer">
+                        < Artwork />
+                        </div>
                 </div>
                 <div className="column is-3 " id="rightcolumn">
-                    <button className="button is-link is-focused" id="backbutton" onClick={this.decreaseIndex.bind(this)}>Back</button>
-                    <button className="button is-link is-focused" onClick={this.increaseIndex.bind(this)}>Next</button>
+                    <RightColumns />
                 </div>        
             </div>
         )
