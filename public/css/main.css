@@ -58,3 +58,12 @@ img {
     margin-bottom: 3px;
     color: gray;
 }
+
+#pictures {
+    width: 80%;
+    margin-left: 10%;
+}
+
+#deletebutton {
+    width: 100%;
+}

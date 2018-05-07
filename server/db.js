@@ -22,9 +22,17 @@ function addArtwork (artwork, testConn) {
     .then(getArtworks())
 }
 
+function deleteArtwork (id, testConn) {
+    const conn = testConn || db
+    return conn('artworks')
+        .where('id', id)
+        .del()
+}
+
   module.exports = {
         getBackgrounds,
         getArtworks,
         addBackground,
-        addArtwork
+        addArtwork,
+        deleteArtwork
   }

@@ -4,6 +4,7 @@ export const RECEIVE_ARTWORKS = 'RECEIVE_ARTWORKS'
 export const INCREASE_ARTWORK_INDEX = 'INCREASE_ARTWORK_INDEX'
 export const DECREASE_ARTWORK_INDEX = 'DECREASE_ARTWORK_INDEX'
 export const ADD_ARTWORK = 'ADD_ARTWORK'
+export const DELETE_ARTWORK = 'DELETE_ARTWORK'
 
 
 export function increaseTheArtworkIndex (artworkIndex, artworks){
@@ -28,7 +29,12 @@ export const receiveArtworks = (artworks) => {
         artworks
     }
 }
-
+export const deleteArtwork = (artwork) => {
+    return {
+        type: DELETE_ARTWORK,
+        artwork
+    }
+}
 
 export const addArtwork = (artwork) => {
     return {
@@ -61,6 +67,22 @@ export function postArtworkRequest (artwork) {
                     return
                 }
                 dispatch(addArtwork(res.body))
+            })
+    }
+}
+
+export function deleteArtworkRequest (artwork) {
+    console.log(artwork)
+    return (dispatch) => {
+        request
+            .delete('/api/v2/'+ artwork.id
+            )
+            .end((err, res) => {
+                if (err) {
+                    console.log(err)
+                    return
+                }
+                dispatch(deleteArtwork(artwork))
             })
     }
 }

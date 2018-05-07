@@ -15,5 +15,10 @@ router.post('/', (req, res) => {
         .catch(err => res.status(500).send(err.message + 'SERVER ERROR'))  
 })
 
+router.delete('/:id', (req, res) => {
+    db.deleteArtwork(req.params.id)
+        .then(() => res.sendStatus(202))
+        .catch(err => res.status(500).send(err.message = 'SERVER ERROR'))
+})
 
 module.exports = router
