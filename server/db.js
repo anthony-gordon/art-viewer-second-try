@@ -29,10 +29,19 @@ function deleteArtwork (id, testConn) {
         .del()
 }
 
+function deleteBackground (id, testConn) {
+    const conn = testConn || db
+    return conn('backgrounds')
+        .where('id', id)
+        .del()
+}
+
+
   module.exports = {
         getBackgrounds,
         getArtworks,
         addBackground,
         addArtwork,
-        deleteArtwork
+        deleteArtwork,
+        deleteBackground
   }

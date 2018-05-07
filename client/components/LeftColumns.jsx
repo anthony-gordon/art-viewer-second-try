@@ -50,8 +50,11 @@ updateArtwork(e){
             <h6 className="subtitle is-6">Upload background image</h6>
             <form onSubmit={this.submitUrl.bind(this)}>       
                 <input className="input" type='text'placeholder="Image URL" name='url' onChange={this.updateUrl.bind(this)} />
-            
-                <input id="submitUpload" className="button is-link is-focused" type='submit' />    
+                <input id="submitUpload" className="button is-link is-focused" type='submit' />
+                <Link to="/backgrounds" >
+                    <a className="button is-link is-focused" id="viewallbutton"
+                 >View all</a>
+                </Link>  
             </form>
         </div>
         <div id="uploadingimagebox" className="box">
@@ -59,16 +62,12 @@ updateArtwork(e){
             <form onSubmit={this.submitArtwork.bind(this)}>       
                 <input className="input" type='text'placeholder="Image URL" name='url' onChange={this.updateArtwork.bind(this)} />
             
-                <input id="submitUpload" className="button is-link is-focused" type='submit' />    
+                <input id="submitUpload" className="button is-link is-focused" type='submit' />
+                <Link to="/artworks" >
+                    <a className="button is-link is-focused" id="viewallbutton"
+                 >View all</a>
+                </Link>    
             </form>
-        </div>
-        <div id="uploadingimagebox" className="box">
-            {/* <h6 className="subtitle is-6">View all artwork images</h6> */}
-            <Link to="/artworks" >
-                <a className="button is-link is-focused" id="backbutton"
-                //  onClick={this.makeBackgroundInvisible.bind(this)}
-                 >Back</a>
-            </Link>
         </div>
     </div>
         )

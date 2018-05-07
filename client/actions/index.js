@@ -4,6 +4,7 @@ export const RECEIVE_BACKGROUNDS = 'RECEIVE_BACKGROUNDS'
 export const INCREASE_INDEX = 'INCREASE_INDEX'
 export const DECREASE_INDEX = 'DECREASE_INDEX'
 export const ADD_BACKGROUND = 'ADD_BACKGROUND'
+export const DELETE_BACKGROUND = 'DELETE_BACKGROUND'
 
 export function increaseTheIndex (index, backgrounds){
     return {
@@ -35,6 +36,13 @@ export const addBackground = (background) => {
     }
 }
 
+export const deleteBackground = (background) => {
+    return {
+        type: DELETE_BACKGROUND,
+        background
+    }
+}
+
 export function fetchBackgrounds () {
     return (dispatch => {
         return request
@@ -59,6 +67,22 @@ export function postUrlRequest (url) {
                     return
                 }
                 dispatch(addBackground(res.body))
+            })
+    }
+}
+
+export function deleteBackgroundRequest (background) {
+    console.log(background)
+    return (dispatch) => {
+        request
+            .delete('/api/v1/'+ background.id
+            )
+            .end((err, res) => {
+                if (err) {
+                    console.log(err)
+                    return
+                }
+                dispatch(deleteBackground(background))
             })
     }
 }

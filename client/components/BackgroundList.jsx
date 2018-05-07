@@ -1,28 +1,25 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {fetchArtworks, deleteArtworkRequest} from '../actions/artworks'
+import {fetchBackgrounds, deleteBackgroundRequest} from '../actions'
 import {Link} from 'react-router-dom'
 
-class ArtworkList extends React.Component {
+class BackgroundList extends React.Component {
  
 
 componentDidMount(){
-    this.props.dispatch(fetchArtworks())
+    this.props.dispatch(fetchBackgrounds())
 }
 
     render(){
-        console.log(this.props.artworks)
-        {var theArtworks = this.props.artworks}
-        {theArtworks =   theArtworks || ""}
         return (
         
-        <div>
+            <div>
                 <div id="pictures" className="columns is-multiline">
-                        {this.props.artworks.map(artwork => {
+                        {this.props.backgrounds.map(background => {
                             return<div className="column is-one-third"> 
-                                <img src={artwork.url}/>
+                                <img src={background.url}/>
                                 
-                                    <button id="deletebutton" onClick={() =>this.props.dispatch(deleteArtworkRequest(artwork))}className="button is-link is-focused">
+                                    <button id="deletebutton" onClick={() =>this.props.dispatch(deleteBackgroundRequest(background))}className="button is-link is-focused">
                                         Delete
                                     </button>
                         
@@ -32,17 +29,16 @@ componentDidMount(){
                     <a className="button is-white" id="returnbutton">Return</a>
                  </Link>  
             </div>
-                
 )
     }
 }
 
 function mapStateToProps(state){
     return {
-        artworks: state.artworks,
-        artworkIndex: state.artworkIndex
+        backgrounds: state.backgrounds,
+        backgroundIndex: state.backgroundIndex
         
     }
 }
 
-export default connect(mapStateToProps)(ArtworkList)
+export default connect(mapStateToProps)(BackgroundList)
