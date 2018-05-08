@@ -16,7 +16,7 @@ componentDidMount(){
         var divStyle = {
             top: '30%',
             left: `${this.props.left}%`,
-            width: '100px'
+            width: '15%'
         }
 
         {var oneBackground = this.props.backgrounds[this.props.index]}
@@ -27,10 +27,12 @@ componentDidMount(){
                     <LeftColumns />
                 </div> 
                 <div className="column is-8" id="maincontent">
-                    <img src={oneBackground.url} />
-                    <div style={divStyle} className="artworkcontainer">
-                        < Artwork />
+                    <div className="backgroundcontainer">
+                        <img src={oneBackground.url} />
+                        <div style={divStyle} className="artworkcontainer">
+                            < Artwork />
                         </div>
+                    </div>
                 </div>
                 <div className="column is-2 " id="rightcolumn">
                     <RightColumns />

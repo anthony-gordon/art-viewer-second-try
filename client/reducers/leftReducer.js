@@ -19,11 +19,11 @@ export default leftReducer
 
 
 function decreaseLeft(left) {
-    var next = left === 0 ? 100 : left - 1
+    var next = left === 2 ? 77 : left - 1
     return next
 }
 
 function increaseLeft(left) {
-    var next = left === 100 ? 1 : left + 1
+    var next = left === 77 ? 2 : left + 1
     return next
 }

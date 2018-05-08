@@ -49,10 +49,27 @@ moveArtworkCentre(){
                         <button className="button is-link is-focused" id="backbutton" onClick={this.decreaseArtworkIndex.bind(this)}>Back</button>
                         <button className="button is-link is-focused" onClick={this.increaseArtworkIndex.bind(this)}>Next</button>
                     </div>
-                    <button onClick={this.moveArtworkLeft.bind(this)}>Left</button>
-                    <button onClick={this.moveArtworkRight.bind(this)}>Right</button>
-                    <button onClick={this.moveArtworkCentre.bind(this)}>Centre</button>
-
+                    <div className="box" id="reposition">
+                    <h6 className="subtitle is-6" id="positionheader" >Position artwork</h6>
+                        <div className="columns">
+                            <button id="upbutton" className="button is-link is-focused">↑</button>
+                        </div>
+                        <div className="columns">
+                            <div className="column is-4" id="movearoundcontainer">
+                                <button id="leftbutton" className="button is-link is-focused" onClick={this.moveArtworkLeft.bind(this)}>←</button>
+                            </div>
+                            <div className="column is-4" id="movearoundcontainer">
+                                <button id="centrebutton" className="button is-link is-focused" onClick={this.moveArtworkCentre.bind(this)}>↻</button>   
+                            </div>
+                            <div className="column is-4" id="movearoundcontainer">
+                                <button id="rightbutton"  className="button is-link is-focused" onClick={this.moveArtworkRight.bind(this)}>→</button>
+                            </div>
+                            
+                        </div>
+                        <div className="columns">
+                            <button id="downbutton" className="button is-link is-focused">↓</button>
+                        </div>
+                    </div>
                 </div>
         )
     }
