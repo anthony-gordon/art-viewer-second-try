@@ -13,6 +13,12 @@ componentDidMount(){
 
     render(){
 
+        var divStyle = {
+            top: '30%',
+            left: `${this.props.left}%`,
+            width: '100px'
+        }
+
         {var oneBackground = this.props.backgrounds[this.props.index]}
         {oneBackground =   oneBackground || ""}
         return (
@@ -22,7 +28,7 @@ componentDidMount(){
                 </div> 
                 <div className="column is-8" id="maincontent">
                     <img src={oneBackground.url} />
-                    <div className="artworkcontainer">
+                    <div style={divStyle} className="artworkcontainer">
                         < Artwork />
                         </div>
                 </div>
@@ -37,7 +43,8 @@ componentDidMount(){
 function mapStateToProps(state){
     return {
         backgrounds: state.backgrounds,
-        index: state.index
+        index: state.index,
+        left: state.left
     }
 }
 

@@ -6,9 +6,11 @@
   "author": "<you@example.com>",
   "license": "MIT",
   "scripts": {
+    "start": "node server",
     "knex": "knex",
     "test": "jest",
-    "dev": "nodemon --watch server & webpack --watch"
+    "dev": "nodemon --watch server & webpack --watch",
+    "postinstall": "webpack && knex migrate:latest"
   },
   "keywords": [
     "react",
@@ -33,6 +35,7 @@
     "jsdom": "^11.10.0",
     "knex": "^0.14.6",
     "nodemon": "^1.17.3",
+    "pg": "^7.4.3",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-redux": "^5.0.7",
