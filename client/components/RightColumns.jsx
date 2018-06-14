@@ -9,6 +9,7 @@ import {
   moveTheArtworkLeft,
   moveTheArtworkRight,
   moveTheArtworkUp,
+  moveTheArtworkDown,
   moveTheArtworkCentre
 } from "../actions/positionchange";
 
@@ -51,7 +52,7 @@ class RightColumns extends React.Component {
   }
 
   moveArtworkDown() {
-    this.props.dispatch(moveTheArtworkUp(this.props.vertical));
+    this.props.dispatch(moveTheArtworkDown(this.props.vertical));
   }
 
   moveArtworkCentre() {
