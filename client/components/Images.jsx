@@ -1,13 +1,7 @@
-import React from 'react'
-
+import React from "react";
 
 const Images = props => {
-    return (
-        <div>
-            Hi
-        </div>
-    )
-}
+  return <div>Hi</div>;
+};
 
-
-export default Images
+export default Images;

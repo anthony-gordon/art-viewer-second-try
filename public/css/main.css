@@ -1,117 +1,118 @@
 img {
-    width: 97%;
+  width: 97%;
 }
 
-.button.is-link.is-focused{
-    width: 48.5%;
+.button.is-link.is-focused {
+  width: 48.5%;
 }
 
 #submitUpload {
-    width: 100%;
-    margin-top: 12px;
+  width: 100%;
+  margin-top: 12px;
 }
 
-
 #rightcolumn {
-    padding-left: 0;
+  padding-left: 0;
 }
 
 #maincontent {
-    padding-right: 0;
+  padding-right: 0;
 }
 
 #backbutton {
-    margin-right: 1%;
+  margin-right: 1%;
 }
 
 .columns {
-    margin-right: 0px;
+  margin-right: 0px;
 }
 
 .box {
-    text-align: center;
+  text-align: center;
 }
 
 .subtitle.is-6 {
-    margin-bottom: 12px;
+  margin-bottom: 12px;
 }
 
-.artworkcontainer{
-    position: absolute;
+.artworkcontainer {
+  position: absolute;
 }
 
 #uploadingimagebox {
-    margin-left: 12px;
+  margin-left: 12px;
 }
 
 #title {
-    margin-bottom: 15px;
-    text-align: center;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 #subtitle {
-    text-align: center;
-    margin-bottom: 3px;
-    color: gray;
+  text-align: center;
+  margin-bottom: 3px;
+  color: gray;
 }
 
 #pictures {
-    width: 80%;
-    margin-left: 10%;
+  width: 80%;
+  margin-left: 10%;
 }
 
 #deletebutton {
-    width: 100%;
+  width: 100%;
 }
 
 #viewallbutton {
-    width: 100%;
-    margin-top: 12px;
+  width: 100%;
+  margin-top: 12px;
 }
 
 #returnbutton {
-    margin-left: 30%;
-    width: 40%;
+  margin-left: 30%;
+  width: 40%;
 }
 
 .backgroundcontainer {
-    position: relative;
+  position: relative;
 }
 
-#leftbutton, #rightbutton {
-    width: 100%;
+#leftbutton,
+#rightbutton {
+  width: 100%;
 }
 
 #movearoundcontainer {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
-#downbutton, #upbutton {
-    width: 33%;
-    margin-left: 33%;
+#downbutton,
+#upbutton {
+  width: 33%;
+  margin-left: 33%;
 }
 
 #centrebutton {
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    border-radius: 30%;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: 30%;
 }
 
 #upbutton {
-    margin-top: 12px;
-    margin-bottom: 5px;
+  margin-top: 12px;
+  margin-bottom: 5px;
 }
 
 #downbutton {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 
 #reposition {
-    padding-left: 18%;
+  padding-left: 18%;
 }
 
 #positionheader {
-    margin-bottom: 12px;
+  margin-bottom: 12px;
 }
