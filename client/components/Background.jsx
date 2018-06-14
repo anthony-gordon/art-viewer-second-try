@@ -12,7 +12,7 @@ class Background extends React.Component {
 
   render() {
     var divStyle = {
-      top: "30%",
+      top: `${this.props.vertical}%`,
       left: `${this.props.left}%`,
       width: "15%"
     };
@@ -48,7 +48,8 @@ function mapStateToProps(state) {
   return {
     backgrounds: state.backgrounds,
     index: state.index,
-    left: state.left
+    left: state.left,
+    vertical: state.vertical
   };
 }
 

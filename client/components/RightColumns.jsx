@@ -8,6 +8,7 @@ import {
 import {
   moveTheArtworkLeft,
   moveTheArtworkRight,
+  moveTheArtworkUp,
   moveTheArtworkCentre
 } from "../actions/positionchange";
 
@@ -43,6 +44,14 @@ class RightColumns extends React.Component {
 
   moveArtworkRight() {
     this.props.dispatch(moveTheArtworkRight(this.props.left));
+  }
+
+  moveArtworkUp() {
+    this.props.dispatch(moveTheArtworkUp(this.props.vertical));
+  }
+
+  moveArtworkDown() {
+    this.props.dispatch(moveTheArtworkUp(this.props.vertical));
   }
 
   moveArtworkCentre() {
@@ -89,7 +98,11 @@ class RightColumns extends React.Component {
             Position artwork
           </h6>
           <div className="columns">
-            <button id="upbutton" className="button is-link is-focused">
+            <button
+              id="upbutton"
+              className="button is-link is-focused"
+              onClick={this.moveArtworkUp.bind(this)}
+            >
               ↑
             </button>
           </div>
@@ -123,7 +136,11 @@ class RightColumns extends React.Component {
             </div>
           </div>
           <div className="columns">
-            <button id="downbutton" className="button is-link is-focused">
+            <button
+              id="downbutton"
+              className="button is-link is-focused"
+              onClick={this.moveArtworkDown.bind(this)}
+            >
               ↓
             </button>
           </div>
@@ -139,7 +156,8 @@ function mapStateToProps(state) {
     backgrounds: state.backgrounds,
     artworkIndex: state.artworkIndex,
     artworks: state.artworks,
-    left: state.left
+    left: state.left,
+    vertical: state.vertical
   };
 }
 
