@@ -116,3 +116,17 @@ img {
 #positionheader {
   margin-bottom: 12px;
 }
+
+.draggableImage {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 200px;
+  width: 200px;
+  height: 300px;
+}
+
+.draggable {
+  position: absolute;
+  left: 0;
+  top: 0;
+}

@@ -38,6 +38,7 @@
     "pg": "^7.4.3",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-draggable": "^3.0.5",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "react-test-renderer": "^16.3.2",
