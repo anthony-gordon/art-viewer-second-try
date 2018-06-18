@@ -160,6 +160,11 @@ body {
   text-align: center;
 }
 
+.github {
+  width: 2%;
+  margin-left: 49%;
+}
+
 .input {
   font-family: "Lucida Console", Monaco, monospace;
 }
@@ -173,5 +178,9 @@ body {
   }
   .box {
     margin-left: 12px;
+  }
+  .github {
+    width: 8%;
+    margin-left: 46%;
   }
 }

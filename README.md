@@ -1,5 +1,7 @@
 # art-viewer-second-try
 
-This is a project in which I am trying to make a really simple and clean application that gives artists a way to show potential clients how their art will look inside their home. Right now, this is a full-stack project that uses a SQLite database. I am uses React and Redux to create the functionality of the site. 
+Have a play! http://anthonyartviewer.herokuapp.com/#/play
 
-In the future I am hoping to incorporate elements of Augmented Reality (AR) to make the user experience much more fluid and accurate.
+This project gives artists a way to show potential clients how their art will look inside their home. It's a full-stack web app that uses a SQLite database to store the image data, and React and Redux to create its functionality.
+
+There are a ton of directions I'd like to take this projects in. Among other things, in the future I am hoping to incorporate elements of Augmented Reality (AR) to make the user experience much more fluid and accurate, and make it a React Native downloadable application that could be used offline.
