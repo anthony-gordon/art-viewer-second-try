@@ -108,12 +108,12 @@ class RightColumns extends React.Component {
           </button>
         </div>
         <div className="box" id="reposition">
-          <h6 className="subtitle is-6" id="positionheader">
-            Position artwork
+          <h6 className="subtitle is-6" id="resizeheader">
+            Resize artwork
           </h6>
 
           <div className="columns">
-            <div className="column is-6" id="movearoundcontainer">
+            <div className="column is-6" id="biggerbutton">
               <button
                 id="leftbutton"
                 className="button is-link is-focused"
@@ -122,7 +122,7 @@ class RightColumns extends React.Component {
                 +
               </button>
             </div>
-            <div className="column is-6" id="movearoundcontainer">
+            <div className="column is-6" id="smallerbutton">
               <button
                 id="leftbutton"
                 className="button is-link is-focused"

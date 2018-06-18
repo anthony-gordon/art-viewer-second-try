@@ -82,8 +82,14 @@ img {
   width: 100%;
 }
 
-#movearoundcontainer {
+#smallerbutton {
+  margin: 0 0 0 1%;
   margin: 0;
+  padding: 0;
+}
+
+#biggerbutton {
+  margin: 0 1.5% 0 0;
   padding: 0;
 }
 
@@ -113,8 +119,8 @@ img {
   padding-left: 18%;
 }
 
-#positionheader {
-  margin-bottom: 12px;
+#resizeheader {
+  margin-bottom: 20px;
 }
 
 .draggableImage {
