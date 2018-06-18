@@ -1,26 +1,5 @@
 import request from "superagent";
 
-export const INCREASE_INDEX = "INCREASE_INDEX";
-export const DECREASE_INDEX = "DECREASE_INDEX";
-export const ADD_BACKGROUND = "ADD_BACKGROUND";
-export const DELETE_BACKGROUND = "DELETE_BACKGROUND";
-
-export function increaseTheIndex(index, backgrounds) {
-  return {
-    type: INCREASE_INDEX,
-    index,
-    backgrounds
-  };
-}
-
-export function decreaseTheIndex(index, backgrounds) {
-  return {
-    type: "DECREASE_INDEX",
-    index,
-    backgrounds
-  };
-}
-
 export const receiveBackgrounds = backgrounds => {
   return {
     type: "RECEIVE_BACKGROUNDS",
@@ -37,7 +16,7 @@ export const addBackground = background => {
 
 export const deleteBackground = background => {
   return {
-    type: DELETE_BACKGROUND,
+    type: "DELETE_BACKGROUND",
     background
   };
 };

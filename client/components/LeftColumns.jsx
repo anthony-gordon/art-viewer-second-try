@@ -3,8 +3,7 @@ import { connect } from "react-redux";
 import { postUrlRequest } from "../actions/index";
 import { fetchBackgrounds } from "../actions";
 import { fetchArtworks, postArtworkRequest } from "../actions/artworks";
-import { goToTheLastArtwork } from "../actions/index";
-import { HashRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class LeftColumns extends React.Component {
   constructor(props) {
@@ -62,7 +61,10 @@ class LeftColumns extends React.Component {
               type="submit"
             />
             <Link to="/backgrounds">
-              <a className="button is-link is-focused" id="viewallbutton">
+              <a
+                className="button is-link is-focused"
+                id="viewallbackgroundsbutton"
+              >
                 View all
               </a>
             </Link>
@@ -85,7 +87,10 @@ class LeftColumns extends React.Component {
               type="submit"
             />
             <Link to="/artworks">
-              <a className="button is-link is-focused" id="viewallbutton">
+              <a
+                className="button is-link is-focused"
+                id="viewallartworksbutton"
+              >
                 View all
               </a>
             </Link>

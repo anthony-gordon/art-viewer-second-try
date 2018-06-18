@@ -1,8 +1,7 @@
 import Draggable from "react-draggable";
 import React from "react";
 import { connect } from "react-redux";
-import { fetchBackgrounds } from "../actions";
-import Artwork from "./Artwork";
+import { fetchBackgrounds } from "../actions/backgrounds";
 import RightColumns from "./RightColumns";
 import LeftColumns from "./LeftColumns";
 import { fetchArtworks } from "../actions/artworks";
@@ -70,7 +69,7 @@ class Background extends React.Component {
       backgroundImage: `url(${oneArtwork.url})`,
       backgroundSize: `${this.props.width}px`,
       width: `${this.props.width}px`,
-      height: `${Math.round(this.props.width) * 2}px`
+      height: `${this.props.width * 2}px`
     };
     return (
       <div className="columns">
@@ -89,9 +88,6 @@ class Background extends React.Component {
                 <div style={divStyle} className="draggableImage" />
               </Draggable>
             </div>
-            {/* <div style={divStyle} className="artworkcontainer">
-              <img src={oneArtwork.url} />
-            </div> */}
           </div>
         </div>
         <div className="column is-2 " id="rightcolumn">
@@ -106,8 +102,6 @@ function mapStateToProps(state) {
   return {
     backgrounds: state.backgrounds,
     index: state.index,
-    left: state.left,
-    vertical: state.vertical,
     artworks: state.artworks,
     artworkIndex: state.artworkIndex,
     width: state.width

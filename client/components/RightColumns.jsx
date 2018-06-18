@@ -6,13 +6,6 @@ import {
   decreaseTheArtworkIndex
 } from "../actions/artworks";
 import {
-  moveTheArtworkLeft,
-  moveTheArtworkRight,
-  moveTheArtworkUp,
-  moveTheArtworkDown,
-  moveTheArtworkCentre
-} from "../actions/positionchange";
-import {
   makeTheArtworkBigger,
   makeTheArtworkSmaller
 } from "../actions/artworkSize";
@@ -31,7 +24,6 @@ class RightColumns extends React.Component {
   }
 
   increaseArtworkIndex() {
-    console.log("increase", this.props.artworks);
     this.props.dispatch(
       increaseTheArtworkIndex(this.props.artworkIndex, this.props.artworks)
     );
@@ -43,32 +35,11 @@ class RightColumns extends React.Component {
     );
   }
 
-  moveArtworkLeft() {
-    this.props.dispatch(moveTheArtworkLeft(this.props.left));
-  }
-
-  moveArtworkRight() {
-    this.props.dispatch(moveTheArtworkRight(this.props.left));
-  }
-
-  moveArtworkUp() {
-    this.props.dispatch(moveTheArtworkUp(this.props.vertical));
-  }
-
-  moveArtworkDown() {
-    this.props.dispatch(moveTheArtworkDown(this.props.vertical));
-  }
-
-  moveArtworkCentre() {
-    this.props.dispatch(moveTheArtworkCentre(this.props.left));
-  }
-
   makeArtworkBigger() {
     this.props.dispatch(makeTheArtworkBigger(this.props.width));
   }
 
   makeArtworkSmaller() {
-    console.log("artworksmaller", this.props.width);
     this.props.dispatch(makeTheArtworkSmaller(this.props.width));
   }
 
@@ -136,8 +107,6 @@ function mapStateToProps(state) {
     backgrounds: state.backgrounds,
     artworkIndex: state.artworkIndex,
     artworks: state.artworks,
-    left: state.left,
-    vertical: state.vertical,
     width: state.width
   };
 }

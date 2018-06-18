@@ -1,8 +1,9 @@
 import React from "react";
+import { HashRouter as Router, Route } from "react-router-dom";
+
 import Background from "./Background";
 import Header from "./Header";
 import ArtworkList from "./ArtworkList";
-import { HashRouter as Router, Route, Link } from "react-router-dom";
 import BackgroundList from "./BackgroundList";
 
 const App = props => {
