@@ -1,15 +1,14 @@
 import React from "react";
+import { HashRouter as Router, Route, Link } from "react-router-dom";
 
 const Header = props => {
   return (
-    <div>
-      <h1 id="title" className="title is-1">
-        Home Gallery
-      </h1>
-      <p id="subtitle" class="subtitle is-5">
-        by Anthony Gordon
-      </p>
-    </div>
+    <Link to="/play">
+      <div className="v-title">
+        <div id="homegallery">home gallery</div>
+        <div id="byanthonygordon">by anthony gordon</div>
+      </div>
+    </Link>
   );
 };
 

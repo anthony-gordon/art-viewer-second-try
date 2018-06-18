@@ -111,27 +111,19 @@ class RightColumns extends React.Component {
           <h6 className="subtitle is-6" id="resizeheader">
             Resize artwork
           </h6>
-
-          <div className="columns">
-            <div className="column is-6" id="biggerbutton">
-              <button
-                id="leftbutton"
-                className="button is-link is-focused"
-                onClick={this.makeArtworkBigger.bind(this)}
-              >
-                +
-              </button>
-            </div>
-            <div className="column is-6" id="smallerbutton">
-              <button
-                id="leftbutton"
-                className="button is-link is-focused"
-                onClick={this.makeArtworkSmaller.bind(this)}
-              >
-                -
-              </button>
-            </div>
-          </div>
+          <button
+            className="button is-link is-focused"
+            id="backbutton"
+            onClick={this.makeArtworkBigger.bind(this)}
+          >
+            +
+          </button>
+          <button
+            className="button is-link is-focused"
+            onClick={this.makeArtworkSmaller.bind(this)}
+          >
+            -
+          </button>
         </div>
       </div>
     );

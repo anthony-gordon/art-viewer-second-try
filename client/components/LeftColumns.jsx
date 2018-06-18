@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { postUrlRequest } from "../actions/index";
 import { fetchBackgrounds } from "../actions";
 import { fetchArtworks, postArtworkRequest } from "../actions/artworks";
+import { goToTheLastArtwork } from "../actions/index";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 
 class LeftColumns extends React.Component {
