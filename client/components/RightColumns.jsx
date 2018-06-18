@@ -12,6 +12,10 @@ import {
   moveTheArtworkDown,
   moveTheArtworkCentre
 } from "../actions/positionchange";
+import {
+  makeTheArtworkBigger,
+  makeTheArtworkSmaller
+} from "../actions/artworkSize";
 
 class RightColumns extends React.Component {
   increaseIndex() {
@@ -59,6 +63,15 @@ class RightColumns extends React.Component {
     this.props.dispatch(moveTheArtworkCentre(this.props.left));
   }
 
+  makeArtworkBigger() {
+    this.props.dispatch(makeTheArtworkBigger(this.props.width));
+  }
+
+  makeArtworkSmaller() {
+    console.log("artworksmaller", this.props.width);
+    this.props.dispatch(makeTheArtworkSmaller(this.props.width));
+  }
+
   render() {
     return (
       <div>
@@ -98,52 +111,26 @@ class RightColumns extends React.Component {
           <h6 className="subtitle is-6" id="positionheader">
             Position artwork
           </h6>
+
           <div className="columns">
-            <button
-              id="upbutton"
-              className="button is-link is-focused"
-              onClick={this.moveArtworkUp.bind(this)}
-            >
-              ↑
-            </button>
-          </div>
-          <div className="columns">
-            <div className="column is-4" id="movearoundcontainer">
+            <div className="column is-6" id="movearoundcontainer">
               <button
                 id="leftbutton"
                 className="button is-link is-focused"
-                onClick={this.moveArtworkLeft.bind(this)}
+                onClick={this.makeArtworkBigger.bind(this)}
               >
-                ←
+                +
               </button>
             </div>
-            <div className="column is-4" id="movearoundcontainer">
+            <div className="column is-6" id="movearoundcontainer">
               <button
-                id="centrebutton"
+                id="leftbutton"
                 className="button is-link is-focused"
-                onClick={this.moveArtworkCentre.bind(this)}
+                onClick={this.makeArtworkSmaller.bind(this)}
               >
-                ↻
+                -
               </button>
             </div>
-            <div className="column is-4" id="movearoundcontainer">
-              <button
-                id="rightbutton"
-                className="button is-link is-focused"
-                onClick={this.moveArtworkRight.bind(this)}
-              >
-                →
-              </button>
-            </div>
-          </div>
-          <div className="columns">
-            <button
-              id="downbutton"
-              className="button is-link is-focused"
-              onClick={this.moveArtworkDown.bind(this)}
-            >
-              ↓
-            </button>
           </div>
         </div>
       </div>
@@ -158,7 +145,8 @@ function mapStateToProps(state) {
     artworkIndex: state.artworkIndex,
     artworks: state.artworks,
     left: state.left,
-    vertical: state.vertical
+    vertical: state.vertical,
+    width: state.width
   };
 }
 

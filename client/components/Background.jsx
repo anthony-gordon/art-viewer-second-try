@@ -67,7 +67,10 @@ class Background extends React.Component {
       oneBackground = oneBackground || "";
     }
     var divStyle = {
-      backgroundImage: `url(${oneArtwork.url})`
+      backgroundImage: `url(${oneArtwork.url})`,
+      backgroundSize: `${this.props.width}px`,
+      width: `${this.props.width}px`,
+      height: `${Math.round(this.props.width) * 2}px`
     };
     return (
       <div className="columns">
@@ -106,7 +109,8 @@ function mapStateToProps(state) {
     left: state.left,
     vertical: state.vertical,
     artworks: state.artworks,
-    artworkIndex: state.artworkIndex
+    artworkIndex: state.artworkIndex,
+    width: state.width
   };
 }
 

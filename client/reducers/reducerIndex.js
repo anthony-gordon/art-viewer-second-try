@@ -2,9 +2,10 @@ import { combineReducers } from "redux";
 import backgroundsReducer from "./backgroundsReducer";
 import indexReducer from "./indexReducer";
 import artworksReducer from "./artworksReducer";
-import artworkIndexReducer from "./artworkIndexReducer";
 import leftReducer from "./leftReducer";
 import verticalReducer from "./verticalReducer";
+import artworkIndexReducer from "./artworkIndexReducer";
+import artworkSizeReducer from "./artworkSizeReducer";
 
 export default combineReducers({
   backgrounds: backgroundsReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
   artworks: artworksReducer,
   artworkIndex: artworkIndexReducer,
   left: leftReducer,
-  vertical: verticalReducer
+  vertical: verticalReducer,
+  width: artworkSizeReducer
 });
