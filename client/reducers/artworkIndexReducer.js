@@ -1,13 +1,8 @@
-import {
-  INCREASE_ARTWORK_INDEX,
-  DECREASE_ARTWORK_INDEX
-} from "../actions/artworks";
-
 const artworkIndexReducer = (state = 0, action) => {
   switch (action.type) {
-    case INCREASE_ARTWORK_INDEX:
+    case "INCREASE_ARTWORK_INDEX":
       return goUpThroughIndex(action.artworkIndex, action.artworks);
-    case DECREASE_ARTWORK_INDEX:
+    case "DECREASE_ARTWORK_INDEX":
       return goDownThroughIndex(action.artworkIndex, action.artworks);
     default:
       return state;

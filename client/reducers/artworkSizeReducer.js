@@ -1,14 +1,9 @@
-import {
-  MAKE_ARTWORK_BIGGER,
-  MAKE_ARTWORK_SMALLER
-} from "../actions/artworkSize";
-
 const artworkSizeReducer = (state = 200, action) => {
   switch (action.type) {
-    case MAKE_ARTWORK_BIGGER:
+    case "MAKE_ARTWORK_BIGGER":
       console.log("reducer", action.width);
       return increaseWidth(action.width);
-    case MAKE_ARTWORK_SMALLER:
+    case "MAKE_ARTWORK_SMALLER":
       console.log("reducer", action.width);
       return decreaseWidth(action.width);
     default:

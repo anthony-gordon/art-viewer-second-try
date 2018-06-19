@@ -1,25 +1,32 @@
 import React from "react";
 import { connect } from "react-redux";
-import { increaseTheIndex, decreaseTheIndex } from "../actions";
+import {
+  increaseTheBackgroundIndex,
+  decreaseTheBackgroundIndex
+} from "../actions/backgrounds";
 import {
   increaseTheArtworkIndex,
-  decreaseTheArtworkIndex
-} from "../actions/artworks";
-import {
+  decreaseTheArtworkIndex,
   makeTheArtworkBigger,
   makeTheArtworkSmaller
-} from "../actions/artworkSize";
+} from "../actions/artworks";
 
 class RightColumns extends React.Component {
-  increaseIndex() {
+  increaseBackgroundIndex() {
     this.props.dispatch(
-      increaseTheIndex(this.props.index, this.props.backgrounds)
+      increaseTheBackgroundIndex(
+        this.props.backgroundIndex,
+        this.props.backgrounds
+      )
     );
   }
 
-  decreaseIndex() {
+  decreaseBackgroundIndex() {
     this.props.dispatch(
-      decreaseTheIndex(this.props.index, this.props.backgrounds)
+      decreaseTheBackgroundIndex(
+        this.props.backgroundIndex,
+        this.props.backgrounds
+      )
     );
   }
 
@@ -51,13 +58,13 @@ class RightColumns extends React.Component {
           <button
             className="button is-link is-focused"
             id="backbutton"
-            onClick={this.decreaseIndex.bind(this)}
+            onClick={this.decreaseBackgroundIndex.bind(this)}
           >
             Back
           </button>
           <button
             className="button is-link is-focused"
-            onClick={this.increaseIndex.bind(this)}
+            onClick={this.increaseBackgroundIndex.bind(this)}
           >
             Next
           </button>
@@ -103,7 +110,7 @@ class RightColumns extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    index: state.index,
+    backgroundIndex: state.backgroundIndex,
     backgrounds: state.backgrounds,
     artworkIndex: state.artworkIndex,
     artworks: state.artworks,

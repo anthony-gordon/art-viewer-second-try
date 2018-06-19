@@ -1,6 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchBackgrounds, deleteBackgroundRequest } from "../actions";
+import {
+  fetchBackgrounds,
+  deleteBackgroundRequest
+} from "../actions/backgrounds";
 import { Link } from "react-router-dom";
 
 class BackgroundList extends React.Component {

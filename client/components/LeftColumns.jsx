@@ -1,9 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
-import { postUrlRequest } from "../actions/index";
-import { fetchBackgrounds } from "../actions";
-import { fetchArtworks, postArtworkRequest } from "../actions/artworks";
 import { Link } from "react-router-dom";
+
+import { fetchBackgrounds, postUrlRequest } from "../actions/backgrounds";
+import { fetchArtworks, postArtworkRequest } from "../actions/artworks";
 
 class LeftColumns extends React.Component {
   constructor(props) {
