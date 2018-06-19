@@ -11,16 +11,16 @@ const artworkSizeReducer = (state = 200, action) => {
 
 export default artworkSizeReducer;
 
-function increaseWidth(width) {
+export function increaseWidth(width) {
   var next = width + 5;
-  if (width > 400) {
+  if (width >= 400) {
     return 400;
   } else return next;
 }
 
-function decreaseWidth(width) {
+export function decreaseWidth(width) {
   var next = width - 5;
-  if (width < 50) {
+  if (width <= 50) {
     return 50;
   } else return next;
 }

@@ -1,9 +1,9 @@
 const indexReducer = (state = 0, action) => {
   switch (action.type) {
     case "INCREASE_BACKGROUND_INDEX":
-      return goUpThroughIndex(action.index, action.backgrounds);
+      return goUpThroughBackgroundIndex(action.index, action.backgrounds);
     case "DECREASE_BACKGROUND_INDEX":
-      return goDownThroughIndex(action.index, action.backgrounds);
+      return goDownThroughBackgroundIndex(action.index, action.backgrounds);
     default:
       return state;
   }
@@ -11,14 +11,12 @@ const indexReducer = (state = 0, action) => {
 
 export default indexReducer;
 
-function goUpThroughIndex(num, array) {
-  console.log("go up", num);
-
+export function goUpThroughBackgroundIndex(num, array) {
   var next = num == array.length - 1 ? 0 : num + 1;
   return next;
 }
 
-function goDownThroughIndex(num, array) {
+export function goDownThroughBackgroundIndex(num, array) {
   var previous = num == 0 ? array.length - 1 : num - 1;
   return previous;
 }

@@ -8,7 +8,7 @@
   "scripts": {
     "start": "node server",
     "knex": "knex",
-    "test": "jest",
+    "test": "jest --watch --noStackTrace",
     "dev": "nodemon --watch server & webpack --watch",
     "postinstall": "webpack && knex migrate:latest"
   },
