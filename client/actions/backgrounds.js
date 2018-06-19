@@ -1,5 +1,21 @@
 import request from "superagent";
 
+export function increaseTheBackgroundIndex(index, backgrounds) {
+  return {
+    type: "INCREASE_BACKGROUND_INDEX",
+    index,
+    backgrounds
+  };
+}
+
+export function decreaseTheBackgroundIndex(index, backgrounds) {
+  return {
+    type: "DECREASE_BACKGROUND_INDEX",
+    index,
+    backgrounds
+  };
+}
+
 export const receiveBackgrounds = backgrounds => {
   return {
     type: "RECEIVE_BACKGROUNDS",
@@ -34,7 +50,7 @@ export function fetchBackgrounds() {
   };
 }
 
-export function postUrlRequest(url) {
+export function postBackgroundRequest(url) {
   return dispatch => {
     request
       .post("/api/v1")

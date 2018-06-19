@@ -1,14 +1,8 @@
 import request from "superagent";
 
-export const RECEIVE_ARTWORKS = "RECEIVE_ARTWORKS";
-export const INCREASE_ARTWORK_INDEX = "INCREASE_ARTWORK_INDEX";
-export const DECREASE_ARTWORK_INDEX = "DECREASE_ARTWORK_INDEX";
-export const ADD_ARTWORK = "ADD_ARTWORK";
-export const DELETE_ARTWORK = "DELETE_ARTWORK";
-
 export function increaseTheArtworkIndex(artworkIndex, artworks) {
   return {
-    type: INCREASE_ARTWORK_INDEX,
+    type: "INCREASE_ARTWORK_INDEX",
     artworkIndex,
     artworks
   };
@@ -16,7 +10,7 @@ export function increaseTheArtworkIndex(artworkIndex, artworks) {
 
 export function decreaseTheArtworkIndex(artworkIndex, artworks) {
   return {
-    type: DECREASE_ARTWORK_INDEX,
+    type: "DECREASE_ARTWORK_INDEX",
     artworkIndex,
     artworks
   };
@@ -24,13 +18,13 @@ export function decreaseTheArtworkIndex(artworkIndex, artworks) {
 
 export const receiveArtworks = artworks => {
   return {
-    type: RECEIVE_ARTWORKS,
+    type: "RECEIVE_ARTWORKS",
     artworks
   };
 };
 export const deleteArtwork = artwork => {
   return {
-    type: DELETE_ARTWORK,
+    type: "DELETE_ARTWORK",
     artwork
   };
 };
@@ -41,6 +35,20 @@ export const addArtwork = artwork => {
     artwork
   };
 };
+
+export function makeTheArtworkBigger(width) {
+  return {
+    type: "MAKE_ARTWORK_BIGGER",
+    width
+  };
+}
+
+export function makeTheArtworkSmaller(width) {
+  return {
+    type: "MAKE_ARTWORK_SMALLER",
+    width
+  };
+}
 
 export function fetchArtworks() {
   return dispatch => {

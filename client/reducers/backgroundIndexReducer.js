@@ -1,10 +1,8 @@
-import { INCREASE_INDEX, DECREASE_INDEX } from "../actions";
-
 const indexReducer = (state = 0, action) => {
   switch (action.type) {
-    case INCREASE_INDEX:
+    case "INCREASE_BACKGROUND_INDEX":
       return goUpThroughIndex(action.index, action.backgrounds);
-    case DECREASE_INDEX:
+    case "DECREASE_BACKGROUND_INDEX":
       return goDownThroughIndex(action.index, action.backgrounds);
     default:
       return state;

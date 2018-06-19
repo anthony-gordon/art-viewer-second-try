@@ -60,7 +60,7 @@ class Background extends React.Component {
     }
 
     {
-      var oneBackground = this.props.backgrounds[this.props.index];
+      var oneBackground = this.props.backgrounds[this.props.backgroundIndex];
     }
     {
       oneBackground = oneBackground || "";
@@ -101,7 +101,7 @@ class Background extends React.Component {
 function mapStateToProps(state) {
   return {
     backgrounds: state.backgrounds,
-    index: state.index,
+    backgroundIndex: state.backgroundIndex,
     artworks: state.artworks,
     artworkIndex: state.artworkIndex,
     width: state.width

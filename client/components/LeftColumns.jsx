@@ -1,9 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
-import { postUrlRequest } from "../actions/index";
-import { fetchBackgrounds } from "../actions";
-import { fetchArtworks, postArtworkRequest } from "../actions/artworks";
 import { Link } from "react-router-dom";
+
+import {
+  fetchBackgrounds,
+  postBackgroundRequest
+} from "../actions/backgrounds";
+import { fetchArtworks, postArtworkRequest } from "../actions/artworks";
 
 class LeftColumns extends React.Component {
   constructor(props) {
@@ -18,7 +21,7 @@ class LeftColumns extends React.Component {
     console.log("submit", this.state.newUrl);
     e.preventDefault();
     e.target.reset();
-    this.props.dispatch(postUrlRequest(this.state.newUrl));
+    this.props.dispatch(postBackgroundRequest(this.state.newUrl));
     this.props.dispatch(fetchBackgrounds());
   }
 

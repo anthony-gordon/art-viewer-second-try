@@ -1,17 +1,11 @@
-import {
-  RECEIVE_ARTWORKS,
-  ADD_ARTWORK,
-  DELETE_ARTWORK
-} from "../actions/artworks";
-
 const artworksReducer = (state = [], action) => {
   let newState = [...state];
   switch (action.type) {
-    case RECEIVE_ARTWORKS:
+    case "RECEIVE_ARTWORKS":
       return action.artworks;
-    case ADD_ARTWORK:
+    case "ADD_ARTWORK":
       return [...newState, action.artworks];
-    case DELETE_ARTWORK:
+    case "DELETE_ARTWORK":
       return [...newState].filter(artwork => artwork != action.artwork);
     default:
       return state;
