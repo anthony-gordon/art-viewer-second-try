@@ -2,7 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { fetchBackgrounds, postUrlRequest } from "../actions/backgrounds";
+import {
+  fetchBackgrounds,
+  postBackgroundRequest
+} from "../actions/backgrounds";
 import { fetchArtworks, postArtworkRequest } from "../actions/artworks";
 
 class LeftColumns extends React.Component {
@@ -18,7 +21,7 @@ class LeftColumns extends React.Component {
     console.log("submit", this.state.newUrl);
     e.preventDefault();
     e.target.reset();
-    this.props.dispatch(postUrlRequest(this.state.newUrl));
+    this.props.dispatch(postBackgroundRequest(this.state.newUrl));
     this.props.dispatch(fetchBackgrounds());
   }
 

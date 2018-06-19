@@ -12,7 +12,6 @@ const artworkIndexReducer = (state = 0, action) => {
 export default artworkIndexReducer;
 
 function goUpThroughIndex(num, array) {
-  console.log("go up", num);
   var next = num == array.length - 1 ? 0 : num + 1;
   return next;
 }

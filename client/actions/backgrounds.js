@@ -50,7 +50,7 @@ export function fetchBackgrounds() {
   };
 }
 
-export function postUrlRequest(url) {
+export function postBackgroundRequest(url) {
   return dispatch => {
     request
       .post("/api/v1")

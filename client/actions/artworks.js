@@ -44,7 +44,6 @@ export function makeTheArtworkBigger(width) {
 }
 
 export function makeTheArtworkSmaller(width) {
-  console.log(" smaller action", width);
   return {
     type: "MAKE_ARTWORK_SMALLER",
     width
