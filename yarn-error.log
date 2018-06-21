@@ -21,10 +21,13 @@ npm manifest:
     "repository": "https://github.com/anthony-gordon/art-viewer-second-try.git",
     "author": "<you@example.com>",
     "license": "MIT",
+    "jest": {
+      "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js"
+    },
     "scripts": {
       "start": "node server",
       "knex": "knex",
-      "test": "jest",
+      "test": "jest --watch --noStackTrace",
       "dev": "nodemon --watch server & webpack --watch",
       "postinstall": "webpack && knex migrate:latest"
     },
@@ -46,6 +49,7 @@ npm manifest:
       "babel-register": "^6.26.0",
       "bulma-start": "^0.0.2",
       "css-loader": "^0.28.11",
+      "eject": "^0.0.4",
       "enzyme": "^3.3.0",
       "express": "^4.16.3",
       "jest": "^22.4.3",
@@ -65,6 +69,7 @@ npm manifest:
       "redux-thunk": "^2.2.0",
       "sqlite3": "^4.0.0",
       "superagent": "^3.8.3",
+      "supertest": "^3.1.0",
       "webpack": "^4.7.0",
       "ws": "3.3.2"
     },
@@ -140,6 +145,10 @@ Lockfile:
   acorn@^5.0.0, acorn@^5.3.0:
     version "5.5.3"
     resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.5.3.tgz#f473dd47e0277a08e28e9bec5aeeb04751f0b8c9"
+  
+  adhere@1.x:
+    version "1.0.1"
+    resolved "https://registry.yarnpkg.com/adhere/-/adhere-1.0.1.tgz#e196e04a776a007749c74f4a54f5ecf74c068919"
   
   ajv-keywords@^3.1.0:
     version "3.2.0"
@@ -1400,6 +1409,10 @@ Lockfile:
       normalize-url "2.0.1"
       responselike "1.0.2"
   
+  cadence@1.x:
+    version "1.0.10"
+    resolved "https://registry.yarnpkg.com/cadence/-/cadence-1.0.10.tgz#f95090a869382585082d265832ed97d1d674f739"
+  
   call-me-maybe@^1.0.1:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/call-me-maybe/-/call-me-maybe-1.0.1.tgz#26d208ea89e37b5cbde60250a15f031c16a4d66b"
@@ -2272,6 +2285,14 @@ Lockfile:
     version "1.1.1"
     resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
   
+  eject@^0.0.4:
+    version "0.0.4"
+    resolved "https://registry.yarnpkg.com/eject/-/eject-0.0.4.tgz#bad7c33522e63fe963ccb713d0cb0ee7a975d8fb"
+    dependencies:
+      adhere "1.x"
+      cadence "1.x"
+      interrupt "1.x"
+  
   ejs@^2.5.9:
     version "2.5.9"
     resolved "https://registry.yarnpkg.com/ejs/-/ejs-2.5.9.tgz#7ba254582a560d267437109a68354112475b0ce5"
@@ -2873,7 +2894,7 @@ Lockfile:
       combined-stream "1.0.6"
       mime-types "^2.1.12"
   
-  formidable@^1.2.0:
+  formidable@^1.1.1, formidable@^1.2.0:
     version "1.2.1"
     resolved "https://registry.yarnpkg.com/formidable/-/formidable-1.2.1.tgz#70fb7ca0290ee6ff961090415f4b3df3d2082659"
   
@@ -3492,6 +3513,12 @@ Lockfile:
   interpret@^1.0.0, interpret@^1.0.4, interpret@^1.1.0:
     version "1.1.0"
     resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.1.0.tgz#7ed1b1410c6a0e0f78cf95d3b8440c63f78b8614"
+  
+  interrupt@1.x:
+    version "1.2.0"
+    resolved "https://registry.yarnpkg.com/interrupt/-/interrupt-1.2.0.tgz#8f8e0d0cfba190e74682e82d8f0439205a670209"
+    dependencies:
+      supersede "1.x"
   
   into-stream@^3.1.0:
     version "3.1.0"
@@ -6205,7 +6232,7 @@ Lockfile:
       normalize-package-data "^2.3.2"
       path-type "^3.0.0"
   
-  "readable-stream@1 || 2", readable-stream@2.3.6, readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.4, readable-stream@^2.0.6, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.3.3, readable-stream@^2.3.5:
+  "readable-stream@1 || 2", readable-stream@2.3.6, readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.4, readable-stream@^2.0.5, readable-stream@^2.0.6, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.3.3, readable-stream@^2.3.5:
     version "2.3.6"
     resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.6.tgz#b11c27d88b8ff1fbe070643cf94b0c79ae1b0aaf"
     dependencies:
@@ -7044,6 +7071,21 @@ Lockfile:
     version "2.0.1"
     resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
   
+  superagent@3.8.2:
+    version "3.8.2"
+    resolved "https://registry.yarnpkg.com/superagent/-/superagent-3.8.2.tgz#e4a11b9d047f7d3efeb3bbe536d9ec0021d16403"
+    dependencies:
+      component-emitter "^1.2.0"
+      cookiejar "^2.1.0"
+      debug "^3.1.0"
+      extend "^3.0.0"
+      form-data "^2.3.1"
+      formidable "^1.1.1"
+      methods "^1.1.1"
+      mime "^1.4.1"
+      qs "^6.5.1"
+      readable-stream "^2.0.5"
+  
   superagent@^3.8.3:
     version "3.8.3"
     resolved "https://registry.yarnpkg.com/superagent/-/superagent-3.8.3.tgz#460ea0dbdb7d5b11bc4f78deba565f86a178e128"
@@ -7058,6 +7100,17 @@ Lockfile:
       mime "^1.4.1"
       qs "^6.5.1"
       readable-stream "^2.3.5"
+  
+  supersede@1.x:
+    version "1.0.6"
+    resolved "https://registry.yarnpkg.com/supersede/-/supersede-1.0.6.tgz#27ce9eaaf0b81e9ea31d7471c7aa4cb153f50065"
+  
+  supertest@^3.1.0:
+    version "3.1.0"
+    resolved "https://registry.yarnpkg.com/supertest/-/supertest-3.1.0.tgz#f9ebaf488e60f2176021ec580bdd23ad269e7bc6"
+    dependencies:
+      methods "~1.1.2"
+      superagent "3.8.2"
   
   supports-color@^2.0.0:
     version "2.0.0"
@@ -7905,7 +7958,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c jest
+  Arguments: -c jest --watch --noStackTrace
   Directory: /Users/anthonylebrun/workspace/art-viewer-second-try
   Output:
   

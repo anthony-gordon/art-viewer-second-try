@@ -47,59 +47,61 @@ class LeftColumns extends React.Component {
 
   render() {
     return (
-      <div>
-        <div id="uploadingimagebox" className="box">
-          <h6 className="subtitle is-6">Upload background image</h6>
-          <form onSubmit={this.submitUrl.bind(this)}>
-            <input
-              className="input"
-              type="text"
-              placeholder="Image URL"
-              name="url"
-              onChange={this.updateUrl.bind(this)}
-            />
-            <input
-              id="submitUpload"
-              className="button is-link is-focused"
-              type="submit"
-            />
-            <Link to="/backgrounds">
-              <a
+      <Provider>
+        <div>
+          <div id="uploadingimagebox" className="box">
+            <h6 className="subtitle is-6">Upload background image</h6>
+            <form onSubmit={this.submitUrl.bind(this)}>
+              <input
+                className="input"
+                type="text"
+                placeholder="Image URL"
+                name="url"
+                onChange={this.updateUrl.bind(this)}
+              />
+              <input
+                id="submitUpload"
                 className="button is-link is-focused"
-                id="viewallbackgroundsbutton"
-              >
-                View all
-              </a>
-            </Link>
-          </form>
-        </div>
-        <div id="uploadingimagebox" className="box">
-          <h6 className="subtitle is-6">Upload artwork image</h6>
-          <form onSubmit={this.submitArtwork.bind(this)}>
-            <input
-              className="input"
-              type="text"
-              placeholder="Image URL"
-              name="url"
-              onChange={this.updateArtwork.bind(this)}
-            />
+                type="submit"
+              />
+              <Link to="/backgrounds">
+                <a
+                  className="button is-link is-focused"
+                  id="viewallbackgroundsbutton"
+                >
+                  View all
+                </a>
+              </Link>
+            </form>
+          </div>
+          <div id="uploadingimagebox" className="box">
+            <h6 className="subtitle is-6">Upload artwork image</h6>
+            <form onSubmit={this.submitArtwork.bind(this)}>
+              <input
+                className="input"
+                type="text"
+                placeholder="Image URL"
+                name="url"
+                onChange={this.updateArtwork.bind(this)}
+              />
 
-            <input
-              id="submitUpload"
-              className="button is-link is-focused"
-              type="submit"
-            />
-            <Link to="/artworks">
-              <a
+              <input
+                id="submitUpload"
                 className="button is-link is-focused"
-                id="viewallartworksbutton"
-              >
-                View all
-              </a>
-            </Link>
-          </form>
+                type="submit"
+              />
+              <Link to="/artworks">
+                <a
+                  className="button is-link is-focused"
+                  id="viewallartworksbutton"
+                >
+                  View all
+                </a>
+              </Link>
+            </form>
+          </div>
         </div>
-      </div>
+      </Provider>
     );
   }
 }
